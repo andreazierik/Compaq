@@ -1,0 +1,7 @@
+{
+  "name": "Compaq",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
