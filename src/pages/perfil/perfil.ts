@@ -7,13 +7,18 @@ import { NavController } from 'ionic-angular';
 })
 export class PerfilPage {
 
-  public event = {
-    month: '1990-02-19',
-    timeStarts: '07:43',
-    timeEnds: '1990-02-20'}
-
-  constructor(public navCtrl: NavController) {
-
+  constructor(
+    public navCtrl: NavController) {
   }
+
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 2000);
+  }
+
 
 }

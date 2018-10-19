@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { PerfilPage } from '../pages/perfil/perfil';
 import { RepositorioPage } from '../pages/repositorio/repositorio';
 import { TabsPage } from '../pages/tabs/tabs';
+import { ApiProvider } from '../providers/api/api';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { TabsPage } from '../pages/tabs/tabs';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ApiProvider
   ]
 })
 export class AppModule {}
