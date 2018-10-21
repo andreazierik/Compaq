@@ -8,20 +8,15 @@
 
 <ion-content>
 
-    <ion-refresher (ionRefresh)="doRefresh($event)">
-        <ion-refresher-content></ion-refresher-content>
-    </ion-refresher>
-
-<ion-card>
-  <img src="https://avatars1.githubusercontent.com/u/22550191?v=4"/>
+<ion-card color="light">
   <ion-card-content>
+    <img [src]="perfil.avatar_url"/>
     <ion-card-title>
-      Erik Vinicius dos Santos Andreazi
-      </ion-card-title>
-    <p>
-      The most popular industrial group ever, and largely
-      responsible for bringing the music to a mass audience.
-    </p>
+        {{ perfil.name }}
+    </ion-card-title>
+      <p>Repositório: {{ perfil.public_repos }}</p><br>
+      <p>Data criação: {{ perfil.created_at }}</p>
+      <p>Última atualização: {{ perfil.updated_at }}</p>
   </ion-card-content>
 </ion-card>
 

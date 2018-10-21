@@ -10,6 +10,7 @@ import { PerfilPage } from '../pages/perfil/perfil';
 import { RepositorioPage } from '../pages/repositorio/repositorio';
 import { TabsPage } from '../pages/tabs/tabs';
 import { ApiProvider } from '../providers/api/api';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ApiProvider } from '../providers/api/api';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -34,6 +36,7 @@ import { ApiProvider } from '../providers/api/api';
   providers: [
     StatusBar,
     SplashScreen,
+    HttpClientModule,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ApiProvider
   ]

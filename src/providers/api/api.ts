@@ -17,11 +17,11 @@ export class ApiProvider {
   }
 
   getPerfil(){
-    return this.http.get(this.baseApiPath + `/andreazierik`);
+    return this.http.get(this.baseApiPath + "/andreazierik");
   }
 
   getRepos(){
-    return this.http.get(this.baseApiPath + `/andreazierik/repos`);
+    return this.http.get(this.baseApiPath + "/andreazierik/repos");
   }
 
 }
