@@ -11,6 +11,7 @@ import { RepositorioPage } from '../pages/repositorio/repositorio';
 import { TabsPage } from '../pages/tabs/tabs';
 import { ApiProvider } from '../providers/api/api';
 import { HttpClientModule } from '@angular/common/http';
+import { Vibration } from '@ionic-native/vibration';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { HttpClientModule } from '@angular/common/http';
     SplashScreen,
     HttpClientModule,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    Vibration,
     ApiProvider
   ]
 })

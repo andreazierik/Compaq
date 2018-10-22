@@ -1,23 +1,22 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
-import { ApiProvider } from '../../providers/api/api';
+import { Vibration } from '@ionic-native/vibration';
+//import { PerfilDetailPage } from '../perfil-detail/perfil-detail';
 import { Observable } from 'rxjs/Observable';
 
 
 @Component({
   selector: 'page-perfil',
   templateUrl: 'perfil.html',
-  providers: [
-    ApiProvider
-  ]
 })
 export class PerfilPage {
 
   public perfil = new Array<any>();
 
-  constructor(public navCtrl: NavController, public http: HttpClient) {
+  constructor(public navCtrl: NavController, public http: HttpClient, private vibration: Vibration) {
     this.getPerfilGithub();
+    this.vibration.vibrate(3000);
   }
 
   getPerfilGithub(){
