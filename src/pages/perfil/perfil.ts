@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, LoadingController } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
-import { Vibration } from '@ionic-native/vibration';
 import { PerfilDetailPage } from '../perfil-detail/perfil-detail';
 import { Observable } from 'rxjs/Observable';
 
@@ -14,15 +13,29 @@ export class PerfilPage {
 
   public perfil = new Array<any>();
 
-  constructor(public navCtrl: NavController, public http: HttpClient, private vibration: Vibration) {
+  constructor(public navCtrl: NavController, 
+			  public http: HttpClient, 
+			  public loadingCtrl: LoadingController) {
     this.getPerfilGithub();
-    this.vibration.vibrate(1000);
   }
+  
+  presentLoadingDefault() {
+	  let loading = this.loadingCtrl.create({
+		content: 'Please wait...'
+	  });
+
+	  loading.present();
+
+	  setTimeout(() => {
+		loading.dismiss();
+	  }, 4000);
+	}
 
   getPerfilGithub(){
     let url = "https://api.github.com/users/andreazierik"
     let data: Observable<any> = this.http.get(url);
     data.subscribe( result => {
+	  this.presentLoadingDefault();
       this.perfil = result;
     });
   }
