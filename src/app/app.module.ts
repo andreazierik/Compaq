@@ -12,6 +12,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { ApiProvider } from '../providers/api/api';
 import { HttpClientModule } from '@angular/common/http';
 import { Vibration } from '@ionic-native/vibration';
+import { PerfilDetailPageModule } from '../pages/perfil-detail/perfil-detail.module'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { Vibration } from '@ionic-native/vibration';
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    PerfilDetailPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

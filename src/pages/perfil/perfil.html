@@ -9,7 +9,7 @@
 <ion-content>
 
 <ion-card color="light">
-  <ion-card-content>
+  <ion-card-content (click)="abrirDetalhes()">
     <img [src]="perfil.avatar_url"/>
     <ion-card-title>
         {{ perfil.name }}

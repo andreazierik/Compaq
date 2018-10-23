@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 import { Vibration } from '@ionic-native/vibration';
-//import { PerfilDetailPage } from '../perfil-detail/perfil-detail';
+import { PerfilDetailPage } from '../perfil-detail/perfil-detail';
 import { Observable } from 'rxjs/Observable';
 
 
@@ -16,7 +16,7 @@ export class PerfilPage {
 
   constructor(public navCtrl: NavController, public http: HttpClient, private vibration: Vibration) {
     this.getPerfilGithub();
-    this.vibration.vibrate(3000);
+    this.vibration.vibrate(1000);
   }
 
   getPerfilGithub(){
@@ -26,5 +26,9 @@ export class PerfilPage {
       this.perfil = result;
     });
   }
+
+  abrirDetalhes(){
+    this.navCtrl.push(PerfilDetailPage);
+}
 
 }
