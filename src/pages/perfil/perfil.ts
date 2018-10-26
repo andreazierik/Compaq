@@ -21,7 +21,7 @@ export class PerfilPage {
   
   presentLoadingDefault() {
 	  let loading = this.loadingCtrl.create({
-		content: 'Please wait...'
+		content: 'Carregando'
 	  });
 
 	  loading.present();
@@ -35,7 +35,7 @@ export class PerfilPage {
     let url = "https://api.github.com/users/andreazierik"
     let data: Observable<any> = this.http.get(url);
     data.subscribe( result => {
-	  this.presentLoadingDefault();
+	    this.presentLoadingDefault();
       this.perfil = result;
     });
   }
